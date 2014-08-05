@@ -1,0 +1,5 @@
+{
+    "providers": [
+        "BankDev\Logviewer\LogviewerServiceProvider"
+    ]
+}
