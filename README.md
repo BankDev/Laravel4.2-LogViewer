@@ -10,9 +10,9 @@ Created and maintained by Micheal Mand. Copyright &copy; 2013. Licensed under th
 
 ---------
 
-#A note about Laravel 4.1
+#A note about Laravel 4.2
 
-As of right now (2013-11-29), fresh Laravel 4.1 applications log things differently than they used to. While this doesn't *technically* break LogViewer, LogViewer also doesn't know how to handle these changes. Here's a quick fix:
+Laravel 4.2 applications log things differently than they used to. While this doesn't *technically* break LogViewer, LogViewer also doesn't know how to handle these changes. Here's a quick fix:
 
 In your `app/start/global.php`, [line 34](https://github.com/laravel/laravel/blob/develop/app/start/global.php#L34) change:
 
@@ -28,7 +28,7 @@ $logFile = 'log-'.php_sapi_name().'.txt';
 Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 ```
 
-This only applies to new installations of Laravel 4.1. If you've upgraded an existing 4.0 application (and did not make changes to the way logs are created and stored), everything should still work.
+This only applies to new installations of Laravel 4.2. If you've upgraded an existing 4.1 application (and did not make changes to the way logs are created and stored), everything should still work.
 
 ---------
 
@@ -38,14 +38,14 @@ This only applies to new installations of Laravel 4.1. If you've upgraded an exi
 
 ##Installation
 
-Add `kmd/logviewer` as a requirement to `composer.json`:
+Add `bankdev/logviewer` as a requirement to `composer.json`:
 
 ```javascript
 {
     ...
     "require": {
         ...
-        "kmd/logviewer": "1.1.*"
+        "bankdev/logviewer": "1.1.*"
         ...
     },
 }
@@ -63,7 +63,7 @@ Add the provider to your `app/config/app.php`:
 'providers' => array(
 
     ...
-    'Kmd\Logviewer\LogviewerServiceProvider',
+    'bankdev\Logviewer\LogviewerServiceProvider',
 
 ),
 ```
@@ -71,7 +71,7 @@ Add the provider to your `app/config/app.php`:
 Publish package assets:
 
 ```
-$ php artisan asset:publish kmd/logviewer
+$ php artisan asset:publish bankdev/logviewer
 ```
 
 (Optional) You can configure your `composer.json` to do this after each `$ composer update`:
@@ -79,7 +79,7 @@ $ php artisan asset:publish kmd/logviewer
 ```
 "scripts":{
     "post-update-cmd":[
-        "php artisan asset:publish kmd/logviewer",
+        "php artisan asset:publish bankdev/logviewer",
         "php artisan optimize",
     ]
 },
@@ -88,10 +88,10 @@ $ php artisan asset:publish kmd/logviewer
 (Optional) Publish package config:
 
 ```
-$ php artisan config:publish kmd/logviewer
+$ php artisan config:publish bankdev/logviewer
 ```
 
-Please note: if you have made changes in your `app/config/packages/kmd/logviewer/config.php`, DO NOT publish the package config again. It will overwrite yours without any warning.
+Please note: if you have made changes in your `app/config/packages/bankdev/logviewer/config.php`, DO NOT publish the package config again. It will overwrite yours without any warning.
 
 ##Usage and Configuration
 
