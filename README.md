@@ -1,4 +1,4 @@
-#Laravel 4 LogViewer
+#Laravel 4.2 LogViewer
 
 Easily view and delete Laravel 4's logs.
 
@@ -23,7 +23,13 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 to:
 
 ```php
-$logFile = 'log-'.php_sapi_name().'.txt';
+$logFile = 'log-'.php_sapi_name().'.txt'; 
+OR 
+$logFile = 'xxx.'.log';
+$logFile = 'xxx'.txt';
+
+'$logFile's can create your own file name. ^_^
+
 
 Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 ```
@@ -96,12 +102,12 @@ Please note: if you have made changes in your `app/config/packages/bankdev/logvi
 ##Usage and Configuration
 
 ###Usage
-
+$fileName
 By default, LogViewer will register itself a couple of routes:
 
  * `logviewer` -> Redirect to today's log, showing all levels.
- * `logviewer/$app/$sapi/$date/delete` -> Delete log from `$sapi` (see: [php\_sapi\_name](http://php.net/manual/en/function.php-sapi-name.php)) on `$date` (`Y-m-d` format).
- * `logviewer/$app/$sapi/$date/$level?` -> Show log from `$sapi` on `$date` with `$level` (if not supplied, defaults to all).
+ * `logviewer/$app/$sapi/$fileName/delete` -> Delete log from `$sapi` (see: [php\_sapi\_name](http://php.net/manual/en/function.php-sapi-name.php)).
+ * `logviewer/$app/$sapi/$fileName/$level?` -> Show log from `$sapi` on `$fileName` with `$level` (if not supplied, defaults to all).
 
 LogViewer also registers a couple filters:
 
@@ -135,7 +141,7 @@ Don't like the way LogViewer looks? Need to integrate it better with your applic
    * `header`: String. The first line of the log message.
    * `stack`: String. The rest of the log message. Possibly blank, if the message did not contain a stack trace.
  * `$empty`: Boolean. Whether the current log is empty or not.
- * `$date`: String. The date of the currently selected log.
+ * `$fileName`: String. The FileName of the currently selected log.
  * `$sapi`: String. The human-readable SAPI of the currently selected log.
  * `$sapi_plain`: String. The SAPI of the currently selected log. Used in the URI.
  * `$url`: String. The base URL from configuration.
