@@ -28,7 +28,7 @@ OR
 $logFile = 'xxx.'.log;
 $logFile = 'xxx'.txt;
 
-$logFile's can create your own file name. ^_^
+$logFile ::: Can create your own file\'s name. ^___^
 
 
 Log::useDailyFiles(storage_path().'/logs/'.$logFile);
