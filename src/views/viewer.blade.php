@@ -151,7 +151,7 @@
         
         <div id="delete_modal" class="modal hide fade">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">√ó</button>
+                <button type="button" class="close" data-dismiss="modal">x</button>
                 <h3>{{ Lang::get('logviewer::logviewer.delete.modal.header') }}</h3>
             </div>
             <div class="modal-body">
