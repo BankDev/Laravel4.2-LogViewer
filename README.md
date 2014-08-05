@@ -28,7 +28,7 @@ OR
 $logFile = 'xxx.'.log;
 $logFile = 'xxx'.txt;
 
-$logFile ::: Can create your own file\'s name. ^___^
+$logFile ::: Can create your own file name. ^___^
 
 
 Log::useDailyFiles(storage_path().'/logs/'.$logFile);
@@ -38,9 +38,9 @@ This only applies to new installations of Laravel 4.2. If you've upgraded an exi
 
 ---------
 
-##Demo
+##Screen Shot
 
-[View the demo here](http://logviewer.kmdwebdesigns.com/logviewer)
+[View the screen shot here](https://dl.dropboxusercontent.com/u/52302831/Screen-Shot.png)
 
 ##Installation
 
