@@ -25,10 +25,10 @@ to:
 ```php
 $logFile = 'log-'.php_sapi_name().'.txt'; 
 OR 
-$logFile = 'xxx.'.log';
-$logFile = 'xxx'.txt';
+$logFile = 'xxx.'.log;
+$logFile = 'xxx'.txt;
 
-'$logFile's can create your own file name. ^_^
+$logFile's can create your own file name. ^_^
 
 
 Log::useDailyFiles(storage_path().'/logs/'.$logFile);
