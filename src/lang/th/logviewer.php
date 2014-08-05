@@ -27,7 +27,7 @@ return array(
         'info' => 'info',
         'debug' => 'debug',
     ),
-    'no_log'  => ':sapi ไม่มีไฟล์ :date อยู่ในขณะนี้!';
+    'no_log'  => ':sapi ไม่มีไฟล์ :date อยู่ในขณะนี้!',
     // @TODO Find out what sapi nginx, IIS, etc. show up as.
     'sapi'   => array(
         'apache' => 'Apache',
